@@ -14,18 +14,10 @@ Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_mediu
 
 ## How to use
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Run this example locally with
 
 ```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-```
-
-```bash
-yarn create next-app --example with-styled-components with-styled-components-app
-```
-
-```bash
-pnpm create next-app --example with-styled-components with-styled-components-app
+npm run dev
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
@@ -45,42 +37,42 @@ When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `ne
 **components/StyledLink.js**
 
 ```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
+import Link from "next/link";
+import styled from "styled-components";
 
 const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
+    <Link href={href} as={as} passHref>
+        <a className={className}>{children}</a>
+    </Link>
+);
 
 export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
+    color: #0075e0;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
 
-  &:hover {
-    color: #40a9ff;
-  }
+    &:hover {
+        color: #40a9ff;
+    }
 
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
+    &:focus {
+        color: #40a9ff;
+        outline: none;
+        border: 0;
+    }
+`;
 ```
 
 **pages/index.js**
 
 ```javascript
-import StyledLink from '../components/StyledLink'
+import StyledLink from "../components/StyledLink";
 
 export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
+    <StyledLink href='/post/[pid]' forwardedAs='/post/abc'>
+        First post
+    </StyledLink>
+);
 ```
 
 </details>
